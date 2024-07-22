@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="about.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>About</title>
+    <link rel="icon" href="./logo/Logo.png" type="image/png" />
+  </head>
+
+  <body>
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 px-4 bg-black sm:bg-transparent sm:-pb-10 xl:pb-2">
+      <div class="mx-auto max-w-screen-lg xl:max-w-screen-xl xl:mt-5 flex flex-col sm:flex-row sm:item-center sm:justify-between relative sm:bg-transparent">
+        <a href="" class="text-1xl flex items-center font-black h-20">
+          <span class="mt-2 xl:-mt-4 mr-2"><img src="./logo/Logo.png" alt="" class="sm:w-24 w-16" /></span>
+        </a>
+        <input class="peer hidden" type="checkbox" id="navbar-open" />
+
+        <label class="cursor-pointer absolute right-0 mt-7 sm:hidden" for="navbar-open">
+          <svg class="w-7 h-7 fill-none stroke-current text-red-800" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </label>
+        <nav class="peer-checked:block hidden sm:block sm:mt-8 xl:mt-6 mb-4 sm:mb-0">
+          <ul class="flex flex-col mb-2 sm:mb-0 sm:flex-row sm:gap-x-8 gap-y-5 px-4">
+            <li><a href="index.html#home" class="text-red-900 hover:text-red-700 font-black text-xs xl:text-md sm:text-white transition duration-300">HOME</a></li>
+            <li><a href="index.html#event" class="text-red-800 hover:text-red-700 font-black text-xs xl:text-md sm:text-white transition duration-300">EVENT</a></li>
+            <li><a href="index.html#about" class="text-red-800 hover:text-red-700 font-black text-xs xl:text-md sm:text-white transition duration-300">ABOUT US</a></li>
+            <li><a href="index.html#product" class="text-red-800 hover:text-red-700 font-black text-xs xl:text-md sm:text-white transition duration-300">PRODUCT</a></li>
+            <li><a href="index.html#contacts" class="text-red-800 hover:text-red-700 font-black text-xs xl:text-md sm:text-white transition duration-300">CONTACTS</a></li>
+            <li>
+              <a href="login.html" class="text-red-800 hover:text-red-700 font-bold border-2 xl:text-md sm:text-white rounded-xl px-4 py-2 border-red-800 hover:bg-red-800 hover:text-white text-sm transition duration-300">LOGIN</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="effect">
+        <div class="birt">
+          <img src="./logo/bird1.gif" alt="" />
+        </div>
+      </div>
+      <div class="list">
+        <div class="item active" id="item_0">
+          <img src="./black/img2.png" alt="About Us Image" />
+          <div class="content">
+            <h2 class="text-white text-5xl">About Us</h2>
+            <div class="content1 text-md">
+              <span class="font-black">Bug Bandit</span> was founded by three IT students from IPB University Reino, Sulthan,and Uzma who shared a love for hiking and the great outdoors. After numerous treks through Indonesia's diverse
+              terrains, they noticed a gap in the market for affordable, high-quality hiking shoes. Inspired by their experiences, they decided to create a brand that combines durability, comfort, and style to enhance every
+              hiker's journey.<br />
+            </div>
+          </div>
+        </div>
+        <div class="item" id="item_1">
+          <img src="./black/img1.png" alt="Bug Bandits Image" />
+          <div class="content">
+            <h2 class="text-white text-5xl">Mission</h2>
+            <div class="content1 text-md">
+              Driven by their passion for nature and commitment to sustainability, Bug Bandit aims to provide footwear that supports adventurous spirits while preserving the environment. Each pair of shoes is designed with the modern
+              explorer in mind, ensuring that every step taken is a step towards a more connected and conscious world. Join us in our journey to make every hike a memorable adventure
+            </div>
+          </div>
+        </div>
+        <div class="item" id="item_2">
+          <img src="./black/img3.png" alt="Product Image" />
+          <div class="content">
+            <h2 class="text-white text-5xl">Vision</h2>
+            <div class="content1 text-md">
+              Our vision is to become a leading brand in the outdoor footwear industry, known for our exceptional products and commitment to sustainability. We aspire to inspire and equip adventurers worldwide, fostering a community that
+              values exploration, environmental stewardship, and a deep connection to the natural world.
+            </div>
+          </div>
+        </div>
+      </div>
+      <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="about.js"></script>
+  </body>
+</html>

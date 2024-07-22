@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bug bandits</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="./logo/Logo.png" type="image/png" />
+</head>
+
+<body class="overflow-x-hidden">
+  <header id="navbar" class="fixed top-0 left-0 w-full z-50 px-4 bg-black sm:bg-transparent sm:-pb-10 xl:pb-2">
+    <div
+      class="mx-auto max-w-screen-lg xl:max-w-screen-xl xl:mt-5 flex flex-col sm:flex-row sm:item-center sm:justify-between relative sm:bg-transparent">
+      <a href="" class="text-1xl flex items-center font-black h-20">
+        <span class="mt-2 xl:-mt-4 mr-2"><img src="./logo/Logo.png" alt="" class="sm:w-24 w-16" /></span>
+      </a>
+      <input class="peer hidden" type="checkbox" id="navbar-open" />
+
+      <label class="cursor-pointer absolute right-0 mt-7 sm:hidden" for="navbar-open">
+        <svg class="w-7 h-7 fill-none stroke-current text-red-800" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </label>
+      <nav class="peer-checked:block hidden sm:block sm:mt-8 xl:mt-6 mb-4 sm:mb-0">
+        <ul class="flex flex-col mb-2 sm:mb-0 sm:flex-row sm:gap-x-8 gap-y-5 px-4">
+          <li><a href="#home"
+              class="text-red-900 hover:text-red-700 font-bold text-xs xl:text-md sm:text-white transition duration-300">HOME</a>
+          </li>
+          <li><a href="#event"
+              class="text-red-900 hover:text-red-700 font-bold text-xs xl:text-md sm:text-white transition duration-300">EVENT</a>
+          </li>
+          <li><a href="#about"
+              class="text-red-800 hover:text-red-700 font-bold text-xs xl:text-md sm:text-white transition duration-300">ABOUT
+              US</a></li>
+          <li><a href="#product"
+              class="text-red-800 hover:text-red-700 font-bold text-xs xl:text-md sm:text-white transition duration-300">OUR
+              PRODUCT</a></li>
+          <li><a href="#contacts"
+              class="text-red-800 hover:text-red-700 font-bold text-xs xl:text-md sm:text-white transition duration-300">CONTACTS</a>
+          </li>
+          <li><a href="login.html"
+              class="text-red-800 hover:text-red-700 font-bold border-2 xl:text-md sm:text-white rounded-xl px-4 py-2 border-red-800 hover:bg-red-800 hover:text-white text-sm transition duration-300">LOGIN</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!------------------------------------------------------------------Cart------------------------------------------------------------------>
+  <a id="hoverDiv" class="cart-button bg-red-700 text-white hover:bg-red-700 xl:w-22 xl:h-22">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+      class="text-white w-6 h-6 sm:w-10 sm:h-10 xl:w-10 xl:h-10">
+      <path
+        d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
+    </svg>
+  </a>
+
+  <div id="popupMenu"
+    class="hidden fixed bottom-24 sm:right-10 xl:bottom-36 right-2 bg-white shadow-lg rounded-lg p-4 w-68 opacity-90 gap-y-40 z-50">
+    <h2 class="text-xl font-bold text-black mb-4">Cart</h2>
+    <span class="flex flex-row justify-between items-center gap-x-2 mb-4">
+      <img class="w-14" src="./sepatu/sepatu4.png" alt="" />
+      <p class="text-black text-xs font-semi-bold">Ultra 360 Gore-Tex</p>
+      <p class="text-black text-xs font-semi-bold">Rp210.000</p>
+      <div class="flex items-center space-x-1">
+        <p class="text-black text-xs font-semi-bold mr-1">x1</p>
+        <div class="flex flex-col items-center justify-center space-y-0.5">
+          <button
+            class="text-white text-xs w-4 h-4 bg-black hover:bg-gray-700 rounded flex items-center justify-center">+</button>
+          <button
+            class="text-white text-xs w-4 h-4 bg-black hover:bg-gray-700 rounded flex items-center justify-center">-</button>
+        </div>
+      </div>
+    </span>
+    <span class="flex flex-row justify-between items-center gap-x-2 mb-4">
+      <img class="w-14" src="./sepatu/sepatu5.png" alt="" />
+      <p class="text-black text-xs font-semi-bold">Ultra 360 Gore-Max</p>
+      <p class="text-black text-xs font-semi-bold">Rp200.000</p>
+      <div class="flex items-center space-x-1">
+        <p class="text-black text-xs font-semi-bold mr-1">x1</p>
+        <div class="flex flex-col items-center justify-center space-y-0.5">
+          <button
+            class="text-white text-xs w-4 h-4 bg-black hover:bg-gray-700 rounded flex items-center justify-center">+</button>
+          <button
+            class="text-white text-xs w-4 h-4 bg-black hover:bg-gray-700 rounded flex items-center justify-center">-</button>
+        </div>
+      </div>
+    </span>
+    <span class="flex flex-row justify-between items-center gap-x-2 mb-4">
+      <img class="w-14" src="./sepatu/sepatu6.png" alt="" />
+      <p class="text-black text-xs font-semi-bold">Ultra 360 Gore-Max</p>
+      <p class="text-black text-xs font-semi-bold">Rp200.000</p>
+      <div class="flex items-center space-x-1">
+        <p class="text-black text-xs font-semi-bold mr-1">x2</p>
+        <div class="flex flex-col items-center justify-center space-y-0.5">
+          <button
+            class="text-white text-xs w-4 h-4 bg-black hover:bg-gray-700 rounded flex items-center justify-center">+</button>
+          <button
+            class="text-white text-xs w-4 h-4 bg-black hover:bg-gray-700 rounded flex items-center justify-center">-</button>
+        </div>
+      </div>
+    </span>
+
+    <span class="flex flex-row justify-between items-center mt-20 sm:mt-36">
+      <h2 class="text-white text-sm font-semi-bold bg-red-700 px-1 py-2 flex justify-center flex-1 rounded-l">Total:
+        Rp810.000</h2>
+      <a href="" class="text-white bg-black text-sm px-2 py-2 hover:bg-red-600 transition duration-300">Checkout</a>
+    </span>
+  </div>
+
+  <!------------------------------------------------------------------HOME------------------------------------------------------------------>
+
+  <div id="home" class="relative h-screen">
+    <video autoplay loop muted playsinline class="w-full h-full object-cover">
+      <source src="./vid/bg-revisi1.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 flex flex-col items-center justify-center z-20 parallax">
+      <h1 class="text-red-800 text-3xl sm:text-5xl xl:text-6xl font-metal">BUG BANDITS</h1>
+      <p class="text-white sm:text-xl xl:text-3xl font-bold opacity-70">Quality Over Quantity</p>
+    </div>
+  </div>
+
+  <!------------------------------------------------------------------HOME-SEARCH------------------------------------------------------------------>
+  <div class="absolute inset-0 flex items-end justify-center z-20">
+    <a href="#"
+      class="text-white hover:text-red-800 text-xs sm:text-md xl:text-lg font-bold border-2 xl:border-2 border-white mb-10 px-6 sm:px-10 py-4 flex items-center gap-x-3 rounded-full hover:bg-white transition transform duration-500">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3 sm:size-5">
+        <path fill-rule="evenodd"
+          d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z"
+          clip-rule="evenodd" />
+      </svg>
+      <span id="motion"></span>
+    </a>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
+
+  <script>
+    var typed = new Typed('#motion', {
+      strings: ['Affordable Hiking Shoes', 'Stylist Shoes For Hiking'],
+      typeSpeed: 50,
+      loop: true,
+      backdelay: 20000,
+    });
+  </script>
+
+  <!------------------------------------------------------------------EVENT------------------------------------------------------------------>
+  <span id="event" class="flex flex-col justify-center items-center max-w-screen-lg mx-auto px-2 sm:px-40 py-8 mt-10">
+    <div class="relative inline-block">
+      <span class="absolute left-0 right-0 bottom-0 sm:bottom-5 h-1/4 bg-neutral-400"></span>
+      <h1 class="relative text-2xl sm:py-8 sm:text-6xl font-black">OUR EVENT</h1>
+    </div>
+    <p class="text-xs sm:text-sm text-center">
+      We proudly introduce our hiking shoes, specially designed to provide maximum comfort and protection for all your
+      adventures. Made from high-quality materials, these shoes are durable and capable of handling various challenging
+      terrains.
+    </p>
+  </span>
+
+  <div class="flex mx-auto justify-center bg-local size-full">
+    <div class="flex flex-wrap justify-center gap-8 sm:gap-32 py-4 sm:py-10 gap-x-event-custom">
+      <div class="text-black text-center bg-white pb-16 w-64 md:w-80">
+        <img class="w-full h-56 object-cover" src="./login/photo-event1.png" alt="" />
+        <h1 class="text-xl sm:text-3xl font-bold pt-8 pb-2">Shipping Discount</h1>
+        <p class="pb-20 text-black text-justify px-8 text-xs">
+          Take advantage of our limited-time shipping discount for all orders placed this month! Don't miss out on this
+          great offer to save on your favorite shoe purchases. Click here to learn more and shop now!
+        </p>
+        <span class="mt-9 flex justify-center">
+          <a href="#product"
+            class="relative inline-block bg-black text-white py-2 px-12 text-sm rounded-full overflow-hidden group shadow-xl">
+            <span
+              class="absolute inset-0 w-full h-full bg-neutral-300 transform -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
+            <span class="relative z-10 font-semi-bold">LEARN MORE</span>
+          </a>
+        </span>
+      </div>
+      <div class="text-black text-center bg-white pb-16 w-64 sm:w-80">
+        <img class="w-full h-56 object-cover" src="./login/photo-event2.png" alt="" />
+        <h1 class="text-xl sm:text-3xl font-bold pt-8 pb-2">Referral Program</h1>
+        <p class="pb-20 text-black text-justify px-8 text-xs">
+          Take advantage of our exclusive event and enjoy a limited-time shipping discount on all orders placed this
+          month! In addition to saving on your favorite shoes, you’ll get access to our latest collection before anyone
+          else.
+        </p>
+        <span class="mt-5 flex justify-center">
+          <a href="#product"
+            class="relative inline-block bg-black text-white py-2 px-12 text-sm rounded-full overflow-hidden group shadow-xl">
+            <span
+              class="absolute inset-0 w-full h-full bg-neutral-300 transform -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
+            <span class="relative z-10 font-semi-bold">LEARN MORE</span>
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+  <!------------------------------------------------------------------ABOUT US------------------------------------------------------------------>
+  <span id="about" class="flex flex-col justify-center items-center max-w-screen-lg mx-auto px-2 sm:px-40 py-8">
+    <div class="relative inline-block">
+      <span class="absolute left-0 right-0 bottom-0 sm:bottom-5 h-1/4 bg-neutral-400"></span>
+      <h1 class="relative text-2xl sm:py-8 sm:text-6xl font-black">ABOUT US</h1>
+    </div>
+    <p class="text-xs sm:text-sm text-center">
+      Bug Bandit was founded by three IT students from IPB University Reino, Sulthan,and Uzma who shared a love for
+      hiking and the great outdoors. After numerous treks through Indonesia's diverse terrains, they noticed a gap in
+      the market for affordable, high-quality hiking shoes. <br><span class="font-bold">Click image below to read
+        more.</span>
+    </p>
+  </span>
+
+  <div id="about mb-40">
+    <a href="about.html"
+      class="flex flex-col max-w-screen-l mx-auto justify-between items-center about relative">
+      <div class="relative">
+        <img src="./black/about-us.png" alt="" />
+      </div>
+    </a>
+  </div>
+  <!------------------------------------------------------------------PRODUCTS------------------------------------------------------------------>
+  <span id="product"
+    class="flex flex-col justify-center items-center max-w-screen-lg mx-auto px-2 sm:px-40 mt-10 py-10">
+    <div class="relative inline-block">
+      <span class="absolute left-0 right-0 bottom-0 sm:bottom-5 h-1/4 bg-neutral-400"></span>
+      <h1 class="relative text-2xl sm:py-8 sm:text-5xl font-black">OUR PRODUCT</h1>
+    </div>
+    <p class="text-xs sm:text-sm text-center mt-1 sm:mt-0">
+      We proudly introduce our hiking shoes, specially designed to provide maximum comfort and protection for all your
+      adventures. Made from high-quality materials, these shoes are durable and capable of handling various challenging
+      terrains.
+    </p>
+  </span>
+
+  <div id="men" class="flex justify-center"><img class="sm:h-64" src="./black/bg-men.png" alt="" /></div>
+  <!---------------------MEN--------------------------->
+  <div class="max-w-screen-lg mx-auto py-16 mb-10">
+    <div class="flex sm:gap-x-16 justify-center gap-x-custom">
+      <img id="mainSale" class="sm:w-56 rounded-xl sm:block mt-2 hidden sm:ml-2" src="./sale/sale1.png" alt="" />
+      <img id="mainImage" class="w-10 sm:w-64 sm:h-64 mt-28 mb-4 sm:block hidden fade-in" src="./kaki/kaki.png"
+        alt="" />
+
+      <span class="flex flex-col gap-y-2 sm:mt-6">
+        <h1 class="text-lg text-center font-bold">ULTRA 360 GORE-TEX</h1>
+
+        <div class="">
+          <div class="flex flex-col gap-y-2">
+            <span class="flex flex-col items-center sm:flex-row gap-x-2">
+              <p class="text-black">PRICE</p>
+              <p class="text-black ml-2 sm:block hidden">:</p>
+              <p class="text-black">Rp 210.000</p>
+            </span>
+
+            <span class="flex justify-center sm:hidden"><img id="mainImage2" class="w-40 mt-4 mb-4 sm:hidden fade-in"
+                src="./kaki/kaki.png" alt="" /></span>
+
+            <span class="flex-row gap-x-2 sm:flex hidden">
+              <p class="text-black">COLOR</p>
+              <p class="text-black">:</p>
+            </span>
+
+            <span class="flex gap-x-2 sm:justify-start justify-center hidden sm:flex">
+              <button onclick="changeImage('./kaki/kaki.png'), changeSale('./sale/sale1.png')"
+                class="block w-10 h-10 rounded-full border-2 border-black bg-black"></button>
+              <button onclick="changeImage('./kaki/kaki2.png'), changeSale('./sale/sale2.png')"
+                class="block w-10 h-10 rounded-full border-2 border-black bg-neutral-400"></button>
+              <button onclick="changeImage('./kaki/kaki3.png'), changeSale('./sale/sale3.png')"
+                class="block w-10 h-10 rounded-full border-2 border-black bg-lime-100"></button>
+            </span>
+            <span class="flex gap-x-2 sm:justify-start justify-center flex sm:hidden">
+              <button onclick="changeImage2('./kaki/kaki.png')"
+                class="block w-10 h-10 rounded-full border-2 border-black bg-black"></button>
+              <button onclick="changeImage2('./kaki/kaki2.png')"
+                class="block w-10 h-10 rounded-full border-2 border-black bg-neutral-400"></button>
+              <button onclick="changeImage2('./kaki/kaki3.png')"
+                class="block w-10 h-10 rounded-full border-2 border-black bg-lime-100"></button>
+            </span>
+          </div>
+
+          <div>
+            <span class="flex flex-row justify-center sm:justify-start gap-x-2 mt-2">
+              <p class="text-black">SIZE CHART</p>
+              <p class="text-black">:</p>
+            </span>
+
+            <span class="flex gap-x-3 mt-4 justify-center sm:justify-start">
+              <a href="#men">
+                <p class="bg-black text-white text-sm p-1 rounded-sm">22.5</p>
+              </a>
+              <a href="#men">
+                <p class="bg-black text-white text-sm p-1 rounded-sm">23.5</p>
+              </a>
+              <a href="#men">
+                <p class="bg-black text-white text-sm p-1 rounded-sm">25.5</p>
+              </a>
+              <a href="#men">
+                <p class="bg-black text-white text-sm p-1 rounded-sm">26.5</p>
+              </a>
+            </span>
+            <span class="flex gap-x-3 mt-4 justify-center sm:justify-start">
+              <a href="#men">
+                <p class="bg-black text-white text-sm p-1 rounded-sm">27.5</p>
+              </a>
+              <a href="#men">
+                <p class="bg-black text-white text-sm p-1 rounded-sm">28.5</p>
+              </a>
+              <a href="#men">
+                <p class="bg-black text-white text-sm p-1 rounded-sm">29.5</p>
+              </a>
+              <a href="#men">
+                <p class="bg-black text-white text-sm p-1 rounded-sm">30.5</p>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <span class="mt-9 flex justify-center sm:justify-start">
+          <a href="#product"
+            class="relative inline-block bg-black text-white py-2 px-9 text-sm rounded-full overflow-hidden group">
+            <span
+              class="absolute inset-0 w-full h-full bg-neutral-300 transform -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
+            <span class="relative z-10 font-semi-bold">ADD TO CART</span>
+          </a>
+        </span>
+      </span>
+    </div>
+  </div>
+
+  <!---------------------WOMEN--------------------------->
+  <div id="women" class="flex justify-center"><img class="sm:h-64" src="./black/bg-woman.png" alt="" /></div>
+  <div class="max-w-screen-lg mx-auto py-10">
+    <div class="flex sm:gap-x-16 justify-center gap-x-custom">
+      <img id="mainSale2" class="sm:w-56 rounded-xl sm:block mt-2 sm:ml-2 hidden" src="./sale/sale4.png" alt="" />
+      <img id="mainImage3" class="w-10 sm:w-64 sm:h-64 mt-28 mb-4 sm:block hidden fade-in" src="./kaki/kaki4.png"
+        alt="" />
+
+      <span class="flex flex-col gap-y-1 sm:mt-6">
+        <h1 class="text-lg font-bold text-center">ULTRA 360 GORE-MAX</h1>
+
+        <div class="">
+          <div class="flex flex-col gap-y-2">
+            <span class="flex flex-col items-center sm:flex-row gap-x-2">
+              <p class="text-black">PRICE</p>
+              <p class="text-black ml-2 sm:block hidden">:</p>
+              <p class="text-black">Rp 200.000</p>
+            </span>
+
+            <span class="flex justify-center sm:hidden"><img id="mainImage4" class="w-40 mt-4 mb-4 sm:hidden fade-in"
+                src="./kaki/kaki4.png" alt="" /></span>
+
+            <span class="flex-row gap-x-2 sm:flex hidden">
+              <p class="text-black">COLOR</p>
+              <p class="text-black">:</p>
+            </span>
+
+            <span class="flex gap-x-2 sm:justify-start justify-center hidden sm:flex">
+              <button onclick="changeImage3('./kaki/kaki4.png'), changeSale2('./sale/sale4.png')"
+                class="block w-10 h-10 rounded-full border-2 border-black bg-yellow-900"></button>
+              <button onclick="changeImage3('./kaki/kaki5.png'), changeSale2('./sale/sale5.png')"
+                class="block w-10 h-10 rounded-full border-2 border-black bg-lime-100"></button>
+              <button onclick="changeImage3('./kaki/kaki6.png'), changeSale2('./sale/sale6.png')"
+                class="block w-10 h-10 rounded-full border-2 border-black bg-neutral-400"></button>
+            </span>
+            <span class="flex gap-x-2 sm:justify-start justify-center flex sm:hidden">
+              <button onclick="changeImage4('./kaki/kaki4.png')"
+                class="block w-10 h-10 rounded-full border-2 border-black bg-black"></button>
+              <button onclick="changeImage4('./kaki/kaki5.png')"
+                class="block w-10 h-10 rounded-full border-2 border-black bg-lime-100"></button>
+              <button onclick="changeImage4('./kaki/kaki6.png')"
+                class="block w-10 h-10 rounded-full border-2 border-black bg-neutral-400"></button>
+            </span>
+          </div>
+
+          <div class="">
+            <span class="flex flex-row justify-center sm:justify-start gap-x-2 mt-2">
+              <p class="text-black">SIZE CHART</p>
+              <p class="text-black">:</p>
+            </span>
+
+            <span class="flex gap-x-3 mt-4 justify-center sm:justify-start">
+              <a href="#women">
+                <p class="bg-black text-white text-sm p-1 rounded-sm">22.5</p>
+              </a>
+              <a href="#women">
+                <p class="bg-black text-white text-sm p-1 rounded-sm">23.5</p>
+              </a>
+              <a href="#women">
+                <p class="bg-black text-white text-sm p-1 rounded-sm">25.5</p>
+              </a>
+              <a href="#women">
+                <p class="bg-black text-white text-sm p-1 rounded-sm">26.5</p>
+              </a>
+            </span>
+            <span class="flex gap-x-3 mt-4 justify-center sm:justify-start">
+              <a href="#women">
+                <p class="bg-black text-white text-sm p-1 rounded-sm">27.5</p>
+              </a>
+              <a href="#women">
+                <p class="bg-black text-white text-sm p-1 rounded-sm">28.5</p>
+              </a>
+              <a href="#women">
+                <p class="bg-black text-white text-sm p-1 rounded-sm">29.5</p>
+              </a>
+              <a href="#women">
+                <p class="bg-black text-white text-sm p-1 rounded-sm">30.5</p>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <span class="mt-9 flex justify-center sm:justify-start">
+          <a href="#product"
+            class="relative inline-block bg-black text-white py-2 px-9 text-sm rounded-full overflow-hidden group">
+            <span
+              class="absolute inset-0 w-full h-full bg-neutral-300 transform -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
+            <span class="relative z-10 font-semi-bold">ADD TO CART</span>
+          </a>
+        </span>
+      </span>
+    </div>
+  </div>
+
+  <!------------------------------------------------------------------REVIEW------------------------------------------------------------------>
+  <span id="review"
+    class="flex justify-center flex-col items-center max-w-screen-lg mx-auto mt-0 sm:mt-26 pt-20 -mb-44 sm:-mb-32 px-2 sm:px-40">
+    <div class="relative inline-block">
+      <span class="absolute left-0 right-0 bottom-0 sm:bottom-5 h-1/4 bg-neutral-400"></span>
+      <h1 class="relative text-2xl sm:py-8 sm:text-5xl font-black">WHAT THEY SAY</h1>
+    </div>
+    <p class="text-xs sm:text-sm text-center mt-2 sm:mt-0">
+      We are delighted to share that our hiking shoes have received overwhelmingly positive feedback from our customers.
+      Hikers and outdoor enthusiasts alike have praised the exceptional comfort, durability, and performance of our
+      shoes.
+    </p>
+  </span>
+  <main class="py-52">
+    <div class="slider bg-custom py-20" style="--width: 100px; --height: 50px; --quantity: 10">
+      <div class="list">
+        <div class="item" style="--position: 1"><img src="./review/testimoni 1.png" alt="" /></div>
+        <div class="item" style="--position: 2"><img src="./review/testimoni 1.png" alt="" /></div>
+        <div class="item" style="--position: 3"><img src="./review/testimoni 1.png" alt="" /></div>
+        <div class="item" style="--position: 4"><img src="./review/testimoni 1.png" alt="" /></div>
+        <div class="item" style="--position: 5"><img src="./review/testimoni 1.png" alt="" /></div>
+        <div class="item" style="--position: 6"><img src="./review/testimoni 1.png" alt="" /></div>
+        <div class="item" style="--position: 7"><img src="./review/testimoni 1.png" alt="" /></div>
+        <div class="item" style="--position: 8"><img src="./review/testimoni 1.png" alt="" /></div>
+        <div class="item" style="--position: 9"><img src="./review/testimoni 1.png" alt="" /></div>
+        <div class="item" style="--position: 10"><img src="./review/testimoni 1.png" alt="" /></div>
+      </div>
+    </div>
+
+    <div class="slider py-40 pt-20 bg-gray-100" reverse="true" style="--width: 200px; --height: 200px; --quantity: 9">
+      <div class="list">
+        <div class="item" style="--position: 1"><img src="./review/9.png" alt="" /></div>
+        <div class="item" style="--position: 2"><img src="./review/1.png" alt="" /></div>
+        <div class="item" style="--position: 3"><img src="./review/2.png" alt="" /></div>
+        <div class="item" style="--position: 4"><img src="./review/3.png" alt="" /></div>
+        <div class="item" style="--position: 5"><img src="./review/4.png" alt="" /></div>
+        <div class="item" style="--position: 6"><img src="./review/5.png" alt="" /></div>
+        <div class="item" style="--position: 7"><img src="./review/6.png" alt="" /></div>
+        <div class="item" style="--position: 8"><img src="./review/7.png" alt="" /></div>
+        <div class="item" style="--position: 9"><img src="./review/8.png" alt="" /></div>
+      </div>
+    </div>
+  </main>
+  <!------------------------------------------------------------------FOOTER------------------------------------------------------------------>
+  <footer id="contacts" class="bg-black text-white py-8 px-6 gap-y-4">
+    <div class="md:row-span-2 md:col-span-1 sm:hidden block">
+      <img class="w-32 sm:w-48 sm:h-48 mx-auto" src="./logo/Logo.png" alt="" />
+    </div>
+    <div class="sm:hidden flex flex-col text-center py-2 px-10">
+      <h1 class="font-bold text-gray-300 mb-2">BUG BANDITS</h1>
+      <p class="text-gray-300 text-justify text-sm">We are the leading hiking shoe brand based in Indonesia and the best
+        with the most selling products all over the country.</p>
+    </div>
+
+    <div class="w-full max-w-screen-lg mx-auto grid grid-cols-1 sm:grid-rows-2 sm:grid-flow-col gap-4 mt-20">
+      <div class="md:row-span-1">
+        <div class="text-rose-700 text-sm sm:text-lg">IF YOU NEED HELP</div>
+        <div class="font-bold text-xl sm:text-2xl">Contact Us</div>
+        <form class="mt-4 flex flex-row md:flex-row" action="mailto:youremail@example.com" method="post"
+          enctype="text/plain">
+          <input type="email" placeholder="Your Email"
+            class="w-full md:w-4/5 text-xs sm:text-lg px-4 py-2 bg-black border-b-4 border-gray-900 rounded-t md:rounded-l md:rounded-r-none focus:outline-none mt-8" />
+          <button type="submit"
+            class="px-4 py-2 border-b-4 border-gray-900 text-white rounded-b md:rounded-r md:rounded-l-none focus:outline-none">
+            <img class="w-5 h-5" src="./logo/Logo-Send.png" alt="" />
+          </button>
+        </form>
+      </div>
+      <div class="md:row-span-2 md:col-span-1 hidden sm:block">
+        <img class="w-32 sm:w-48 sm:h-46 mx-auto -mt-8" src="./logo/Logo.png" alt="" />
+      </div>
+    </div>
+
+    <div class="max-w-screen-lg mx-auto grid grid-cols-1 sm:grid-cols-4 sm:gap-16 gap-4 text-xs sm:text-sm">
+      <div class="hidden sm:flex flex-col">
+        <h1 class="font-bold text-gray-300 text-center mb-1">BUG BANDITS</h1>
+        <p class="text-gray-300 text-justify">We are the leading hiking shoe brand based in Indonesia and the best with
+          the most selling products all over the country.</p>
+      </div>
+      <div class="sm:pl-10 mt-10 sm:mt-0">
+        <a href="#about" class="text-slate-400">About</a><br /><br />
+        <a href="#product" class="text-slate-400">Our Products</a><br /><br />
+        <a href="#contacts" class="text-slate-400">Contacts</a>
+      </div>
+      <div class="">
+        <a href="" class="text-slate-400">Terms and Conditions</a><br /><br />
+        <a href="" class="text-slate-400">Privacy Policy</a><br /><br />
+        <a href="" class="text-slate-400">Cookie Policy</a>
+      </div>
+      <div>
+        <p class="text-white mt-10 sm:mt-0">Let's Chat</p>
+        <a href="mailto:hi@bugbandits.com" class="text-slate-400">abc@bugbandits.com</a><br /><br />
+        <div class="flex space-x-4 mt-4">
+          <a href="#" class="text-gray-600 hover:text-pink-600">
+            <img class="w-8 h-8" src="./MedSos/LinkedIn.png" alt="" />
+          </a>
+          <a href="#" class="text-gray-600 hover:text-pink-600">
+            <img class="w-8 h-8" src="./MedSos/Instagram.png" alt="" />
+          </a>
+          <a href="#" class="text-gray-600 hover:text-pink-600">
+            <img class="w-8 h-8" src="./MedSos/Twitter.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="container mx-auto text-center py-4 mt-8 text-sm">Copyright &copy; 2024 Bug Bandits.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
