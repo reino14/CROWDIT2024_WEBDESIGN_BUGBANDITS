@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap'); 
 
@@ -230,3 +231,237 @@ main{
     transition: opacity 0.5s, transform 0.5s;
 }
 
+=======
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap'); 
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: rgba(231, 227, 227, 0.895);
+    font-family: "Montserrat", sans-serif;
+}
+
+header{
+    background-color: #EEEBE3;
+}
+
+.font-metal{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+}
+
+.text-body{
+    color: #eee3e3;
+}
+
+.bg-custom {
+    background-image: url('./black/bg-review2.png');
+    background-size: cover;    /* Membuat gambar menutupi seluruh elemen */
+    background-position: center; /* Memposisikan gambar di tengah elemen */
+    background-repeat: no-repeat; /* Mencegah gambar diulang */
+    background-attachment: fixed; /* Memastikan gambar latar belakang tetap pada posisi saat scroll */
+    /* Anda bisa menambahkan width dan height untuk mengatur ukuran elemen yang memiliki latar belakang */
+}
+
+
+
+@media (max-width: 770px){
+    .gap-x-event-custom{
+        padding-right: 0.2rem;
+        padding-left: 0.2rem;
+    }
+}
+
+/* ---------------------------NAVBAR------------------------ */
+/* Default state */
+@media (min-width: 768px){
+    #navbar {
+        background-color: transparent;
+        transition: background-color 0.8s ease;
+    }
+    
+    /* Background color when scrolled */
+    #navbar.scrolled {
+        background-color: rgba(6, 3, 3, 0.5); /* Ganti dengan warna background yang diinginkan dan tingkat transparansi */
+        backdrop-filter: blur(10px); /* Tambahkan efek blur */
+        opacity: 95%;
+    }
+}
+
+
+/* ---------------------------HOME------------------------ */
+.parallax {
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;
+}
+
+
+/* ---------------------------CART------------------------ */
+.cart-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    opacity: 80%;
+}
+@media (max-width: 768px) {
+    .cart-button {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ---------------------------SPACE------------------------ */
+
+@media (min-width: 325px) {
+    .space-l{
+        padding-left: 2rem;
+    }
+}
+
+@media (min-width: 425px) {
+    .space-l{
+        padding-left: 3.1rem;
+    }
+}
+
+/* ---------------------------ABOUT US------------------------ */
+.title{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+}
+
+.text1{
+    color: #fff;
+    font-size: 70px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    position: relative;
+    margin-bottom: 30px;
+    background: #222;
+    animation: text 2.5s 1;
+}
+
+@keyframes text{
+    0%{
+        color: #000;
+        margin-bottom: -50px;
+    }
+    30%{
+        letter-spacing: 25px;
+        margin-bottom: -50px;
+    }
+    80%{
+        letter-spacing: 8px;
+        margin-bottom: -50px;
+    }
+}
+
+/* ---------------------------PRODUCTS------------------------ */
+.carousel-item {
+    display: none;
+}
+  .carousel-item.active {
+    display: block;
+}
+
+.group:hover .relative.z-10 {
+    color: black;
+  }
+
+
+
+
+
+
+
+main{
+    width: min(1200px, 90vw);
+    margin: auto;
+}
+.slider{
+    width: 100%;
+    height: var(--height);
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 10% 90%,
+        transparent
+    );
+}
+.slider .list{
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+}
+.slider .list .item{
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    transition: filter 0.5s;
+    animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) )!important;
+}
+.slider .list .item img{
+    width: 100%;
+}
+@keyframes autoRun{
+    from{
+        left: 100%;
+    }to{
+        left: calc(var(--width) * -1);
+    }
+}
+.slider:hover .item{
+    animation-play-state: paused!important;
+    filter: grayscale(1);
+}
+.slider .item:hover{
+    filter: grayscale(0);
+}
+.slider[reverse="true"] .item{
+    animation: reversePlay 10.1s linear infinite;
+}
+@keyframes reversePlay{
+    from{
+        left: calc(var(--width) * -1);
+    }to{
+        left: 100%;
+    }
+}
+
+
+
+
+
+.fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+>>>>>>> 68973082d9e1d5d76186d64a5aedb6717ce50a45
