@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="login.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="./logo/Logo.png"  type="image/png" />
+  </head>
+
+  <body class="overflow-x-hidden">
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 px-4 bg-black sm:bg-transparent sm:-pb-10 xl:pb-2">
+      <div class="mx-auto max-w-screen-lg xl:max-w-screen-xl xl:mt-5 flex flex-col sm:flex-row sm:item-center sm:justify-between relative sm:bg-transparent">
+        <a href="" class="text-1xl flex items-center font-black h-20">
+          <span class="mt-2 xl:-mt-4 mr-2"><img src="./logo/Logo.png" alt="" class="sm:w-24 w-16" /></span>
+        </a>
+        <input class="peer hidden" type="checkbox" id="navbar-open" />
+
+        <label class="cursor-pointer absolute right-0 mt-4 sm:mt-5 sm:hidden" for="navbar-open">
+          <svg class="w-7 h-7 fill-none stroke-current text-red-800" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </label>
+        <nav class="peer-checked:block hidden sm:block sm:mt-8 xl:mt-6 mb-4 sm:mb-0">
+          <ul class="flex flex-col mb-2 sm:mb-0 sm:flex-row sm:gap-x-8 gap-y-5 px-4">
+            <li><a href="index.html#home" class="text-red-900 hover:text-red-700 font-bold text-xs xl:text-lg sm:text-white transition duration-300">HOME</a></li>
+            <li><a href="index.html#event" class="text-red-800 hover:text-red-700 font-bold text-xs xl:text-lg sm:text-white">EVENT</a></li>
+            <li><a href="index.html#about" class="text-red-800 hover:text-red-700 font-bold text-xs xl:text-lg sm:text-white">ABOUT</a></li>
+            <li><a href="index.html#product" class="text-red-800 hover:text-red-700 font-bold text-xs xl:text-lg sm:text-white">PRODUCT</a></li>
+            <li><a href="index.html#contacts" class="text-red-800 hover:text-red-700 font-bold text-xs xl:text-lg sm:text-white">CONTACT</a></li>
+            <li><a href="#" class="text-red-800 hover:text-red-700 font-bold border-2 xl:text-lg sm:text-white rounded-xl px-4 py-2 border-red-800 hover:bg-red-800 hover:text-white text-sm transition duration-300">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="section mt-10">
+      <div class="container">
+        <div class="row full-height justify-content-center">
+          <div class="col-12 text-center align-self-center py-5">
+            <div class="section pb-5 pt-5 pt-sm-2 text-center">
+              <h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+              <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+              <label for="reg-log"></label>
+              <div class="card-3d-wrap mx-auto">
+                <div class="card-3d-wrapper">
+                  <div class="card-front">
+                    <div class="center-wrap">
+                      <div class="flex justify-content-center">
+                        <img src="./logo/Logo.png" class="w-20" />
+                      </div>
+                      <div class="section text-center">
+                        <h4 class="mb-4 -mt-4">Log In</h4>
+                        <div class="form-group">
+                          <input type="email" class="form-style" placeholder="Email" />
+                          <i class="input-icon uil uil-at"></i>
+                        </div>
+                        <div class="form-group mt-2">
+                          <input type="password" class="form-style" placeholder="Password" />
+                          <i class="input-icon uil uil-lock-alt"></i>
+                        </div>
+                        <a href="#" class="btn mt-4 hover:bg-red-800">Login</a>
+                        <p class="mb-0 mt-4 text-center"><a href="#" class="link">Forgot your password?</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-back">
+                    <div class="center-wrap">
+                      <div class="flex justify-content-center">
+                        <img src="./logo/Logo.png" class="w-20 -mt-2" />
+                      </div>
+                      <div class="section text-center">
+                        <h4 class="mb-3 -mt-6">Sign Up</h4>
+                        <div class="form-group">
+                          <input type="text" class="form-style" placeholder="Full Name" />
+                          <i class="input-icon uil uil-user"></i>
+                        </div>
+                        <div class="form-group mt-2">
+                          <input type="tel" class="form-style" placeholder="Phone Number" />
+                          <i class="input-icon uil uil-phone"></i>
+                        </div>
+                        <div class="form-group mt-2">
+                          <input type="email" class="form-style" placeholder="Email" />
+                          <i class="input-icon uil uil-at"></i>
+                        </div>
+                        <div class="form-group mt-2">
+                          <input type="password" class="form-style" placeholder="Password" />
+                          <i class="input-icon uil uil-lock-alt"></i>
+                        </div>
+                        <a href="#" class="btn mt-4 hover:bg-red-800 mb-4">Register</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
